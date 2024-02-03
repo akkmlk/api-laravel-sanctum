@@ -44,24 +44,9 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
-        // $auth = Auth::user()->id;
-        // $user = User::find($auth);
-        // $user->tokens()->where('id', '1|GopPwcMg5vc5kxDcs5g16hqlWG4ofePtG3fk7EER09009ce0')->delete();
         return response()->json([
             'success' => true,
             'message' => 'logouted',
         ]);
-        // return response()->json($user);
-        // if (Auth::logout()) {
-        //     session()->invalidate();
-        //     session()->regenerateToken();
-        //     return response()->json([
-        //         'success' => true,
-        //         'message' => 'logouted',
-        //     ]);
-
-        // } else {
-        //     return response()->json('oke');
-        // }
     }
 }
